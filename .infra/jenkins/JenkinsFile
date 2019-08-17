@@ -31,7 +31,7 @@ pipeline {
         stage('Build DockerImage')
         {
             steps {
-                sh script: '''
+                powershell: '''
                       docker build build/libs/. -t "rover"
                 ''',
             label: "Building Docker Image"
