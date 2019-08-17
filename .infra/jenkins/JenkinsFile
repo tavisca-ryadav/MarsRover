@@ -32,7 +32,7 @@ pipeline {
         {
             steps {
                 sh script: '''
-                    cd build/libs
+                    cd MarsRover/build/libs
                     docker build . -t "rover"
                 ''',
             label: "Building Docker Image"
