@@ -32,8 +32,8 @@ pipeline {
         {
             steps {
                 sh script: '''
-                    cd build/libs
-                    docker build . -t "rover"
+                 
+                    docker build build/libs/. -t "rover"
                 ''',
             label: "Building Docker Image"
             }
