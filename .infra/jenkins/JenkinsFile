@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh script: '''
+                powershell '''
                     chmod 777 ./gradlew
                     ./gradlew build
+                    echo "project builded"
                 ''',
             label: "Building Project"
             }
