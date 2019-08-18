@@ -22,9 +22,7 @@ pipeline {
         stage('Static Code Analysis')
         {
         steps{
-           withSonarQubeEnv() { // Will pick the global server connection you have configured
-            sh './gradlew sonarqube'
-             }
+           sh script:'''./gradlew sonarqube'''
              }
         }
         stage('Build DockerImage')
