@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 powershell '''
-                    ./gradlew build
+                    echo "in build"
                 '''
             }
         }
@@ -12,7 +12,7 @@ pipeline {
         {
             steps {
                 posershell'''
-                    ./gradlew test
+                    echo "in test"
                 ''',
             label: "Running Unit Test Cases"
             }
