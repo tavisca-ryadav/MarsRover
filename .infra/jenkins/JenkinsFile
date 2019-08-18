@@ -28,7 +28,7 @@ pipeline {
         {
             steps {
                 powershell'''
-                    docker build/libs/. -t rover
+                    docker build -t "rover" build/libs/.
                 '''
             }
         }
