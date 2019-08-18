@@ -21,14 +21,9 @@ pipeline {
         }
         stage('Static Code Analysis')
         {
-            steps {
-                sh script: '''
-                     withSonarQubeEnv() { // Will pick the global server connection you have configured
-      sh './gradlew sonarqube'
-    }
-                ''',
-            label: "Running Sonarqube Scan"
-            }
+           withSonarQubeEnv() { // Will pick the global server connection you have configured
+            sh './gradlew sonarqube'
+             }
         }
         stage('Build DockerImage')
         {
