@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 powershell '''
-                    gradlew build
+                    ./gradlew build
                 '''
             }
         }
@@ -12,7 +12,7 @@ pipeline {
         {
             steps {
                 posershell'''
-                    gradlew test
+                    ./gradlew test
                 ''',
             label: "Running Unit Test Cases"
             }
@@ -22,8 +22,7 @@ pipeline {
             steps {
                 posershell'''
                     echo "I am in Sonarqube scan"
-                ''',
-            label: "Running Sonarqube Scan"
+                '''
             }
         }
         stage('Build DockerImage')
@@ -31,8 +30,7 @@ pipeline {
             steps {
                 powershell'''
                     docker build/libs/. -t rover
-                ''',
-            label: "Building Docker Image"
+                '''
             }
         }
         stage('Publish DockerImage')
@@ -40,8 +38,7 @@ pipeline {
             steps {
                 powershell'''
                     echo "I am Pubishing DockerImage ="
-                ''',
-            label: "Publishing Docker Image"
+                '''
             }
         }
     }
