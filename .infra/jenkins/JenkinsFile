@@ -29,6 +29,9 @@ pipeline {
             steps {
                 powershell'''
                     docker build -t "rover" build/libs/.
+                    echo "build successfully"
+                    docker tag rover rajatindefatigable/rover
+                    echo "tagged successfully"
                 '''
             }
         }
