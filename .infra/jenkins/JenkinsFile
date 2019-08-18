@@ -23,7 +23,9 @@ pipeline {
         {
             steps {
                 sh script: '''
-                    echo "I am in Sonarqube scan"
+                     withSonarQubeEnv() { // Will pick the global server connection you have configured
+      sh './gradlew sonarqube'
+    }
                 ''',
             label: "Running Sonarqube Scan"
             }
