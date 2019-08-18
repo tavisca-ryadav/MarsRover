@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 powershell '''
-                    echo "in build"
+
                 '''
             }
         }
@@ -36,7 +36,8 @@ pipeline {
         {
             steps {
                 powershell'''
-                    echo "I am Pubishing DockerImage ="
+                    docker login -u rajatindefatigable -p Bigbang@9833
+                    docker push rajatindefatigable/rover:latest
                 '''
             }
         }
