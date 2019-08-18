@@ -12,7 +12,7 @@ pipeline {
         stage('Test')
         {
             steps {
-                sh script: '''
+                posershell'''
                     gradlew test
                 ''',
             label: "Running Unit Test Cases"
@@ -21,7 +21,7 @@ pipeline {
         stage('Static Code Analysis')
         {
             steps {
-                sh script: '''
+                posershell'''
                     echo "I am in Sonarqube scan"
                 ''',
             label: "Running Sonarqube Scan"
@@ -30,7 +30,7 @@ pipeline {
         stage('Build DockerImage')
         {
             steps {
-                sh script: '''
+                powershell'''
                     docker build/libs/. -t rover
                 ''',
             label: "Building Docker Image"
@@ -39,7 +39,7 @@ pipeline {
         stage('Publish DockerImage')
         {
             steps {
-                sh script: '''
+                powershell'''
                     echo "I am Pubishing DockerImage ="
                 ''',
             label: "Publishing Docker Image"
