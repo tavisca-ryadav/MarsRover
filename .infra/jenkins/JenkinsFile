@@ -11,7 +11,7 @@ pipeline {
         stage('Test')
         {
             steps {
-                posershell'''
+                powershell'''
                     echo "in test"
                 ''',
             label: "Running Unit Test Cases"
