@@ -3,10 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh script:'''
+                sh script: '''
                     chmod 777 ./gradlew
                     ./gradlew build
-                    echo "project builded"
                 ''',
             label: "Building Project"
             }
@@ -33,7 +32,10 @@ pipeline {
         {
             steps {
                 sh script: '''
-                      docker build build/libs/. -t "rover"
+                     docker build -t "rover" build/libs/.
+                      echo "build successfully"
+                      docker tag rover rajatindefatigable/rover
+                      echo "tagged successfully"
                 ''',
             label: "Building Docker Image"
             }
@@ -42,7 +44,8 @@ pipeline {
         {
             steps {
                 sh script: '''
-                    echo "I am Pubishing DockerImage ="
+                    docker login -u rajatindefatigable -p Bigbang@9833
+                    docker push rajatindefatigable/rover:latest
                 ''',
             label: "Publishing Docker Image"
             }
