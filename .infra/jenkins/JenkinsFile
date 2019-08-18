@@ -19,7 +19,7 @@ pipeline {
         stage('Static Code Analysis')
         {
             steps {
-                posershell'''
+                powershell'''
                     echo "I am in Sonarqube scan"
                 '''
             }
