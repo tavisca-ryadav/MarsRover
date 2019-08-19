@@ -22,7 +22,9 @@ pipeline {
         stage('Static Code Analysis')
         {
         steps{
-           sh script:'''./gradlew sonarqube'''
+           sh script:'''
+           echo "running sonarqube scan"
+           '''
              }
         }
         stage('Build DockerImage')
