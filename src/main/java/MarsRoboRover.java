@@ -15,13 +15,13 @@ public class MarsRoboRover{
         for(int i=0;i<command.length();i++){
             switch(command.charAt(i)) {
                 case 'L':
-                    newVector = newVector.TurnLeft();
+                    newVector = newVector.turnLeft();
                     break;
                 case 'R':
-                    newVector = newVector.TurnRight();
+                    newVector = newVector.turnRight();
                     break;
                 case 'M':
-                    newVector = newVector.GetNextVector();
+                    newVector = newVector.getNextVector();
                     break;
             }
         }

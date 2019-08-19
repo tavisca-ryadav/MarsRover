@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 public class RoverTests {
 
     @Test
-   public void VectorInitializesWithGivenPoints(){
+   public void vectorInitializesWithGivenPoints(){
         Vector r = new Vector(10,10,'N');
         assertEquals(r.x,10);
         assertEquals(r.y,10);
@@ -13,99 +13,99 @@ public class RoverTests {
     @Test
     public void vectorCanRotateLeftFromNorth(){
         Vector r = new Vector(10,10,'N');
-        Vector newVector = r.TurnLeft();
+        Vector newVector = r.turnLeft();
         assertEquals('W',newVector.direction);
     }
 
     @Test
-    public void VectorCanRotateLeftFromWest(){
+    public void vectorCanRotateLeftFromWest(){
         Vector r = new Vector(10,10,'W');
-        Vector newVector = r.TurnLeft();
+        Vector newVector = r.turnLeft();
         assertEquals('S',newVector.direction);
     }
 
     @Test
-    public void VectorCanRotateLeftFromSouth(){
+    public void vectorCanRotateLeftFromSouth(){
         Vector r = new Vector(10,10,'S');
-        Vector newVector = r.TurnLeft();
+        Vector newVector = r.turnLeft();
         assertEquals('E',newVector.direction);
     }
 
     @Test
-    public void VectorCanRotateLeftFromEast(){
+    public void vectorCanRotateLeftFromEast(){
         Vector r = new Vector(10,10,'E');
-        Vector newVector = r.TurnLeft();
+        Vector newVector = r.turnLeft();
         assertEquals('N',newVector.direction);
     }
 
     @Test
     public void vectorCanRotateRightFromNorth(){
         Vector r = new Vector(10,10,'N');
-        Vector newVector = r.TurnRight();
+        Vector newVector = r.turnRight();
         assertEquals('E',newVector.direction);
     }
 
     @Test
-    public void VectorCanRotateRightFromWest(){
+    public void vectorCanRotateRightFromWest(){
         Vector r = new Vector(10,10,'W');
-        Vector newVector = r.TurnRight();
+        Vector newVector = r.turnRight();
         assertEquals('N',newVector.direction);
     }
 
     @Test
-    public void VectorCanRotateRightFromSouth(){
+    public void vectorCanRotateRightFromSouth(){
         Vector r = new Vector(10,10,'S');
-        Vector newVector = r.TurnRight();
+        Vector newVector = r.turnRight();
         assertEquals('W',newVector.direction);
     }
 
     @Test
-   public void VectorCanRotateRightFromEast(){
+   public void vectorCanRotateRightFromEast(){
         Vector r = new Vector(10,10,'E');
-        Vector newVector = r.TurnRight();
+        Vector newVector = r.turnRight();
         assertEquals('S',newVector.direction);
     }
 
     @Test
-    public void NextVectorInNorth(){
+    public void nextVectorInNorth(){
         Vector r = new Vector(10,10,'N');
-        Vector newVector = r.GetNextVector();
+        Vector newVector = r.getNextVector();
         assertEquals(11,newVector.y);
         assertEquals(10,newVector.x);
     }
 
     @Test
-    public void NextVectorInWest(){
+    public void nextVectorInWest(){
         Vector r = new Vector(10,10,'W');
-        Vector newVector = r.GetNextVector();
+        Vector newVector = r.getNextVector();
         assertEquals(9,newVector.x);
         assertEquals(10,newVector.y);
     }
 
     @Test
-    public void NextVectorInSouth(){
+    public void nextVectorInSouth(){
         Vector r = new Vector(10,10,'S');
-        Vector newVector = r.GetNextVector();
+        Vector newVector = r.getNextVector();
         assertEquals(9,newVector.y);
         assertEquals(10,newVector.x);
     }
 
     @Test
-    public void NextVectorInEast(){
+    public void nextVectorInEast(){
         Vector r = new Vector(10,10,'E');
-        Vector newVector = r.GetNextVector();
+        Vector newVector = r.getNextVector();
         assertEquals(11,newVector.x);
         assertEquals(10,newVector.y);
     }
 
     @Test
-    public void VectorMoveAndRotate(){
+    public void vectorMoveAndRotate(){
         Vector newVector = new Vector(10,10,'S');
-        newVector.TurnLeft();
-        newVector.GetNextVector();
-        newVector.GetNextVector();
-        newVector.TurnLeft();
-        newVector.GetNextVector();
+        newVector.turnLeft();
+        newVector.getNextVector();
+        newVector.getNextVector();
+        newVector.turnLeft();
+        newVector.getNextVector();
         assertEquals(11,10,'N');
 
     }

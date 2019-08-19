@@ -28,15 +28,15 @@ public class Vector {
 
 
 
-    public Vector TurnLeft() {
+    public Vector turnLeft() {
         return new Vector(this.x,this.y,leftMap.get(this.direction));
     }
 
-    public Vector TurnRight() {
+    public Vector turnRight() {
         return new Vector(this.x,this.y,rightMap.get(this.direction));
     }
 
-    public Vector GetNextVector() {
+    public Vector getNextVector() {
         int newX = x,newY = y;
         switch (direction){
             case 'N':
